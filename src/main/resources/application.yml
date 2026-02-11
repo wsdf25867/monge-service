@@ -11,3 +11,7 @@ spring:
 svix:
   webhook:
     secret: ${SVIX_WEBHOOK_SECRET}
+
+clerk:
+  base-url: https://api.clerk.com
+  api-key: ${CLERK_API_KEY}

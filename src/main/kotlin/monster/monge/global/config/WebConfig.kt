@@ -21,7 +21,7 @@ class WebConfig : WebMvcConfigurer {
                 chain.doFilter(ContentCachingRequestWrapper(req, 0), res)
             }
         }).apply {
-            addUrlPatterns("/api/webhooks/clerk/*")
+            addUrlPatterns("/webhooks/clerk/*")
         }
 
 }
