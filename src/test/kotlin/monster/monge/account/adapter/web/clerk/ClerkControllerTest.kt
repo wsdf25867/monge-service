@@ -14,7 +14,7 @@ import org.springframework.test.web.servlet.assertj.MockMvcTester
 import tools.jackson.databind.ObjectMapper
 
 @WebMvcTest(ClerkController::class)
-@Import(SecurityConfig::class, ClerkWebConfig::class, ClerkPayloadArgumentResolver::class)
+@Import(SecurityConfig::class)
 class ClerkControllerTest(
     @MockitoBean private val signatureValidator: SvixSignatureValidator,
     @MockitoBean private val accountRegister: AccountRegister,
@@ -44,7 +44,7 @@ class ClerkControllerTest(
 
         //then
         tester.post()
-            .uri("/api/webhooks/clerk")
+            .uri("/webhooks/clerk")
             .header("svix-id", "msg_123")
             .header("svix-signature", "v1,abc")
             .header("svix-timestamp", "1234567890")

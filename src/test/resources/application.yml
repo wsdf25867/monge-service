@@ -13,4 +13,8 @@ spring:
 
 svix:
   webhook:
-    secret: whsec_
+    secret: whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw
+
+clerk:
+  base-url: https://api.clerk.com
+  api-key: test-api-key

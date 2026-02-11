@@ -24,10 +24,10 @@ class SecurityConfig {
                 }
             }
             csrf {
-                ignoringRequestMatchers("/api/webhooks/clerk/**")
+                ignoringRequestMatchers("/webhooks/clerk/**")
             } // 중요: CSRF 비활성화
             authorizeHttpRequests {
-                authorize("/api/webhooks/clerk/**", permitAll)
+                authorize("/webhooks/clerk/**", permitAll)
                 authorize(anyRequest, authenticated)
             }
             oauth2ResourceServer {

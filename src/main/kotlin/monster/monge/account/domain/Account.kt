@@ -14,8 +14,11 @@ class Account(
     @Id
     @GeneratedValue
     val id: Long? = null,
-) {
+): AbstractAggregateRoot<Account>() {
 
+    init {
+        registerEvent(AccountRegistered(this))
+    }
     companion object {
         fun from(request: AccountRegisterRequest) =
             Account(request.email, request.providerId)
